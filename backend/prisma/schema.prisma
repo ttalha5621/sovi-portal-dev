@@ -1,0 +1,103 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+}
+
+model User {
+    id        Int      @id @default(autoincrement())
+    email     String   @unique
+    password  String
+    name      String?
+    role      Role     @default(USER)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+enum Role {
+    USER
+    ADMIN
+}
+
+model District {
+    id        Int            @id @default(autoincrement())
+    name      String         @unique
+    fid       String?        @unique
+    division  String?
+    province  String?
+    country   String         @default("Pakistan")
+    soviScore Float?
+    rating    Int?
+    data      DistrictData[]
+    createdAt DateTime       @default(now())
+    updatedAt DateTime       @updatedAt
+}
+
+model DistrictData {
+    id         Int      @id @default(autoincrement())
+    district   District @relation(fields: [districtId], references: [id], onDelete: Cascade)
+    districtId Int
+    year       Int      @default(2024)
+
+    // Education
+    NOSCL  Float?
+    PRIMSC Float?
+    ENRLPR Float?
+    ENRMA  Float?
+    PATS   Float?
+    ADLLIT Float?
+    Sedu   Float?
+
+    // Health
+    DIARR           Float?
+    IMMUN           Float?
+    WTTI            Float?
+    CbyladyH_W_PRE  Float?
+    CbyladyH_W_POST Float?
+    PNCONSL         Float?
+    FERTILITY       Float?
+    CHDISABL        Float?
+    Shealth         Float?
+
+    // Facility
+    TENURE    Float?
+    ROOMS     Float?
+    ELECTRIC  Float?
+    TAPWATER  Float?
+    MEDIA     Float?
+    INTERNET  Float?
+    Sfacility Float?
+
+    // Economic
+    QAGRI     Float?
+    REMITT    Float?
+    ECoH      Float?
+    BHU_F     Float?
+    Fmly_P    Float?
+    Sch_F     Float?
+    Vat_F     Float?
+    Agro_F    Float?
+    Pol_F     Float?
+    Seconomic Float?
+
+    // Population
+    QOLD        Float?
+    QMID        Float?
+    Fpop        Float?
+    Rpop        Float?
+    Upop        Float?
+    QKIDS       Float?
+    Growth_Rate Float?
+    Spopulation Float?
+
+    // Final scores
+    totalSoVI Float?
+    rating    Int?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([districtId, year])
+}

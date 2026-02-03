@@ -1,0 +1,26 @@
+.district-form {
+    @apply space-y-6;
+}
+
+.form-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.form-actions {
+    @apply flex justify-end space-x-3 pt-6 border-t border-gray-200;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-grid {
+        @apply grid-cols-1;
+    }
+
+    .form-actions {
+        @apply flex-col space-x-0 space-y-3;
+    }
+
+    .form-actions button {
+        @apply w-full;
+    }
+}

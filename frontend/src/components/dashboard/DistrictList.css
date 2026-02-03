@@ -1,0 +1,156 @@
+.district-list {
+    @apply h-full flex flex-col;
+}
+
+.district-list-header {
+    @apply p-4 border-b border-gray-200;
+}
+
+.search-container {
+    @apply relative mb-3;
+}
+
+.search-icon {
+    @apply absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400;
+}
+
+.search-input {
+    @apply w-full pl-10 pr-8 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+}
+
+.search-clear {
+    @apply absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600;
+}
+
+.filter-container {
+    @apply flex justify-end;
+}
+
+.filter-button {
+    @apply flex items-center space-x-2 px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200;
+}
+
+.sort-controls {
+    @apply flex px-4 py-2 border-b border-gray-200;
+}
+
+.sort-button {
+    @apply flex-1 px-2 py-1 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors;
+}
+
+.sort-button.active {
+    @apply text-primary-600;
+}
+
+.sort-icon {
+    @apply ml-1;
+}
+
+.district-count {
+    @apply px-4 py-2 bg-gray-50 border-b border-gray-200;
+}
+
+.count-text {
+    @apply text-sm text-gray-600;
+}
+
+.districts-container {
+    @apply flex-1 overflow-y-auto;
+}
+
+.no-districts {
+    @apply flex flex-col items-center justify-center py-12;
+}
+
+.no-districts-icon {
+    @apply w-12 h-12 text-gray-400 mb-3;
+}
+
+.no-districts-text {
+    @apply text-gray-500;
+}
+
+.districts-list {
+    @apply divide-y divide-gray-200;
+}
+
+.district-item {
+    @apply flex items-center justify-between px-4 py-3 hover:bg-gray-50 cursor-pointer transition-colors;
+}
+
+.district-item.selected {
+    @apply bg-primary-50;
+}
+
+.district-info {
+    @apply flex-1 min-w-0;
+}
+
+.district-name {
+    @apply font-medium text-gray-900 truncate;
+}
+
+.district-province {
+    @apply text-sm text-gray-500;
+}
+
+.district-score {
+    @apply flex items-center space-x-3;
+}
+
+.score-badge {
+    @apply px-2 py-1 text-xs font-semibold text-white rounded-full;
+}
+
+.district-rating {
+    @apply hidden md:flex flex-col items-end;
+}
+
+.rating-label {
+    @apply text-xs text-gray-500;
+}
+
+.rating-value {
+    @apply font-medium;
+}
+
+.district-arrow {
+    @apply ml-2 text-gray-400;
+}
+
+.district-item:hover .district-arrow {
+    @apply text-gray-600;
+}
+
+.district-summary {
+    @apply p-4 border-t border-gray-200 bg-gray-50;
+}
+
+.summary-item {
+    @apply flex justify-between mb-1 last:mb-0;
+}
+
+.summary-label {
+    @apply text-sm text-gray-600;
+}
+
+.summary-value {
+    @apply text-sm font-medium text-gray-900;
+}
+
+/* Scrollbar styles */
+.districts-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.districts-container::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+}
+
+.districts-container::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded;
+}
+
+.districts-container::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+}

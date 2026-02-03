@@ -1,0 +1,107 @@
+.login-container {
+    @apply min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-primary-50 to-primary-100;
+}
+
+.login-card {
+    @apply w-full max-w-md bg-white rounded-2xl shadow-xl p-8 z-10;
+}
+
+.login-header {
+    @apply text-center mb-8;
+}
+
+.login-logo {
+    @apply w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4;
+}
+
+.login-logo-icon {
+    @apply w-8 h-8 text-primary-600;
+}
+
+.login-title {
+    @apply text-3xl font-bold text-gray-900 mb-2;
+}
+
+.login-subtitle {
+    @apply text-gray-600;
+}
+
+.login-form {
+    @apply space-y-6;
+}
+
+.login-options {
+    @apply flex items-center justify-between;
+}
+
+.remember-me {
+    @apply flex items-center;
+}
+
+.remember-checkbox {
+    @apply h-4 w-4 text-primary-600 rounded;
+}
+
+.remember-label {
+    @apply ml-2 text-sm text-gray-700;
+}
+
+.forgot-password {
+    @apply text-sm text-primary-600 hover:text-primary-700;
+}
+
+.login-button {
+    @apply mt-6;
+}
+
+.login-divider {
+    @apply relative my-8;
+}
+
+.login-divider::before {
+    content: '';
+    @apply absolute top-1/2 left-0 right-0 border-t border-gray-300;
+}
+
+.divider-text {
+    @apply relative px-4 bg-white text-gray-500 text-sm;
+}
+
+.login-other-options {
+    @apply space-y-4;
+}
+
+.login-footer {
+    @apply mt-8 text-center;
+}
+
+.footer-text {
+    @apply text-gray-600;
+}
+
+.footer-link {
+    @apply text-primary-600 hover:text-primary-700 font-medium;
+}
+
+.login-background {
+    @apply fixed inset-0 overflow-hidden;
+}
+
+.background-pattern {
+    @apply absolute inset-0 opacity-10;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.2) 0%, transparent 50%);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .login-card {
+        @apply p-6;
+    }
+
+    .login-title {
+        @apply text-2xl;
+    }
+}

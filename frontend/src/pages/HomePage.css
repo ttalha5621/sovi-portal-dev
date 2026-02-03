@@ -1,0 +1,7 @@
+.home-page {
+  @apply h-screen flex flex-col bg-gray-50;
+}
+
+.main-content {
+  @apply flex-1 overflow-hidden;
+}

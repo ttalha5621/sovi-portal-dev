@@ -1,0 +1,38 @@
+.map-controls {
+    @apply absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-2;
+}
+
+.controls-container {
+    @apply flex flex-col space-y-2;
+}
+
+.control-button {
+    @apply w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.control-button.disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+.zoom-display {
+    @apply mt-2 pt-2 border-t border-gray-200 text-center;
+}
+
+.zoom-label {
+    @apply text-xs text-gray-600;
+}
+
+.zoom-value {
+    @apply text-sm font-medium text-gray-800 ml-1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .map-controls {
+        @apply p-1;
+    }
+
+    .control-button {
+        @apply w-8 h-8;
+    }
+}

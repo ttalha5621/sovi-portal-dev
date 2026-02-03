@@ -1,0 +1,47 @@
+.sidebar {
+  @apply h-full flex flex-col bg-white;
+}
+
+.sidebar-header {
+  @apply p-4 border-b border-gray-200;
+}
+
+.sidebar-title {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.sidebar-content {
+  @apply flex-1 overflow-y-auto;
+}
+
+.sidebar-loading {
+  @apply p-4 text-center text-gray-500;
+}
+
+.districts-list {
+  @apply divide-y divide-gray-100;
+}
+
+.district-item {
+  @apply p-4 cursor-pointer hover:bg-gray-50 transition-colors;
+}
+
+.district-item.selected {
+  @apply bg-blue-50 border-r-4 border-blue-500;
+}
+
+.district-name {
+  @apply font-medium text-gray-900 mb-1;
+}
+
+.district-info {
+  @apply flex justify-between items-center text-sm text-gray-500;
+}
+
+.district-province {
+  @apply text-gray-600;
+}
+
+.district-score {
+  @apply bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium;
+}

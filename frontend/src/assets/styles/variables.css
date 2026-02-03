@@ -1,0 +1,25 @@
+/* SOVI-specific CSS variables */
+:root {
+  /* SOVI brand colors */
+  --sovi-primary: #2563eb;
+  --sovi-secondary: #10b981;
+  --sovi-accent: #f59e0b;
+  --sovi-danger: #ef4444;
+
+  /* Map-specific colors */
+  --map-background: #f8fafc;
+  --map-border: #e2e8f0;
+  --map-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Rating colors */
+  --rating-1: #ef4444; /* Very High Risk */
+  --rating-2: #f97316; /* High Risk */
+  --rating-3: #eab308; /* Medium Risk */
+  --rating-4: #22c55e; /* Low Risk */
+  --rating-5: #10b981; /* Very Low Risk */
+
+  /* Component dimensions */
+  --sidebar-width: 320px;
+  --header-height: 64px;
+  --footer-height: 48px;
+}

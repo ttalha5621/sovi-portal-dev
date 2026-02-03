@@ -1,0 +1,100 @@
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('USER', 'ADMIN');
+
+-- CreateTable
+CREATE TABLE "User" (
+    "id" SERIAL NOT NULL,
+    "email" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "name" TEXT,
+    "role" "Role" NOT NULL DEFAULT 'USER',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "District" (
+    "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
+    "fid" TEXT,
+    "division" TEXT,
+    "province" TEXT,
+    "country" TEXT NOT NULL DEFAULT 'Pakistan',
+    "soviScore" DOUBLE PRECISION,
+    "rating" INTEGER,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "District_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "DistrictData" (
+    "id" SERIAL NOT NULL,
+    "districtId" INTEGER NOT NULL,
+    "year" INTEGER NOT NULL DEFAULT 2024,
+    "NOSCL" DOUBLE PRECISION,
+    "PRIMSC" DOUBLE PRECISION,
+    "ENRLPR" DOUBLE PRECISION,
+    "ENRMA" DOUBLE PRECISION,
+    "PATS" DOUBLE PRECISION,
+    "ADLLIT" DOUBLE PRECISION,
+    "Sedu" DOUBLE PRECISION,
+    "DIARR" DOUBLE PRECISION,
+    "IMMUN" DOUBLE PRECISION,
+    "WTTI" DOUBLE PRECISION,
+    "CbyladyH_W_PRE" DOUBLE PRECISION,
+    "CbyladyH_W_POST" DOUBLE PRECISION,
+    "PNCONSL" DOUBLE PRECISION,
+    "FERTILITY" DOUBLE PRECISION,
+    "CHDISABL" DOUBLE PRECISION,
+    "Shealth" DOUBLE PRECISION,
+    "TENURE" DOUBLE PRECISION,
+    "ROOMS" DOUBLE PRECISION,
+    "ELECTRIC" DOUBLE PRECISION,
+    "TAPWATER" DOUBLE PRECISION,
+    "MEDIA" DOUBLE PRECISION,
+    "INTERNET" DOUBLE PRECISION,
+    "Sfacility" DOUBLE PRECISION,
+    "QAGRI" DOUBLE PRECISION,
+    "REMITT" DOUBLE PRECISION,
+    "ECoH" DOUBLE PRECISION,
+    "BHU_F" DOUBLE PRECISION,
+    "Fmly_P" DOUBLE PRECISION,
+    "Sch_F" DOUBLE PRECISION,
+    "Vat_F" DOUBLE PRECISION,
+    "Agro_F" DOUBLE PRECISION,
+    "Pol_F" DOUBLE PRECISION,
+    "Seconomic" DOUBLE PRECISION,
+    "QOLD" DOUBLE PRECISION,
+    "QMID" DOUBLE PRECISION,
+    "Fpop" DOUBLE PRECISION,
+    "Rpop" DOUBLE PRECISION,
+    "Upop" DOUBLE PRECISION,
+    "QKIDS" DOUBLE PRECISION,
+    "Growth_Rate" DOUBLE PRECISION,
+    "Spopulation" DOUBLE PRECISION,
+    "totalSoVI" DOUBLE PRECISION,
+    "rating" INTEGER,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "DistrictData_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "District_name_key" ON "District"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "District_fid_key" ON "District"("fid");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "DistrictData_districtId_year_key" ON "DistrictData"("districtId", "year");
+
+-- AddForeignKey
+ALTER TABLE "DistrictData" ADD CONSTRAINT "DistrictData_districtId_fkey" FOREIGN KEY ("districtId") REFERENCES "District"("id") ON DELETE CASCADE ON UPDATE CASCADE;

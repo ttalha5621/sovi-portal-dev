@@ -1,0 +1,51 @@
+.spinner-container {
+    @apply flex items-center justify-center;
+}
+
+.spinner-container.full-screen {
+    @apply min-h-screen;
+}
+
+.spinner-content {
+    @apply flex flex-col items-center space-y-4;
+}
+
+.spinner {
+    @apply animate-spin;
+}
+
+.spinner-svg {
+    @apply w-full h-full;
+}
+
+.spinner-path {
+    stroke: currentColor;
+    stroke-linecap: round;
+    animation: spinner-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes spinner-dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+
+.spinner-message {
+    @apply text-sm text-gray-600;
+}
+
+/* Full screen overlay */
+.fixed.inset-0 {
+    backdrop-filter: blur(4px);
+}

@@ -1,0 +1,26 @@
+/* Map animations */
+@keyframes mapZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Utility classes */
+.animate-pulse { animation: pulse 2s infinite; }
+.animate-slide-in { animation: slideIn 0.3s ease-out; }
+.animate-slide-out { animation: slideOut 0.3s ease-in; }
+.animate-map-zoom { animation: mapZoom 0.2s ease-in-out; }

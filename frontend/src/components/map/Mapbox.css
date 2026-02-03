@@ -1,0 +1,19 @@
+.mapbox-container {
+  @apply h-full flex flex-col bg-white;
+}
+
+.map-header {
+  @apply p-4 border-b border-gray-200 bg-gray-50;
+}
+
+.map-title {
+  @apply text-lg font-semibold text-gray-900 text-center;
+}
+
+.map-canvas {
+  @apply flex-1 relative;
+}
+
+.map-loading {
+  @apply absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-500;
+}

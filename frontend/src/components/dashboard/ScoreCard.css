@@ -1,0 +1,39 @@
+.score-card {
+  @apply h-full flex flex-col bg-white p-4;
+}
+
+.score-header {
+  @apply mb-4;
+}
+
+.score-title {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.score-content {
+  @apply flex-1 flex flex-col justify-center;
+}
+
+.score-display {
+  @apply text-center;
+}
+
+.district-name {
+  @apply text-xl font-bold text-gray-900 mb-4;
+}
+
+.main-score {
+  @apply space-y-2;
+}
+
+.score-label {
+  @apply block text-sm text-gray-600;
+}
+
+.score-value {
+  @apply text-4xl font-bold text-blue-600;
+}
+
+.score-empty {
+  @apply text-center text-gray-500;
+}

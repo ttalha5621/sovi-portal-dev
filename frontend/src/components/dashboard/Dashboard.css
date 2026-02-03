@@ -1,0 +1,65 @@
+.dashboard {
+  @apply h-screen bg-gray-50 overflow-hidden;
+}
+
+.dashboard-layout {
+  @apply flex h-full;
+}
+
+/* Left Sidebar - Districts */
+.dashboard-sidebar {
+  @apply w-80 bg-white border-r border-gray-200 flex flex-col;
+  min-width: 320px;
+}
+
+/* Main Content - Map */
+.dashboard-main {
+  @apply flex-1 bg-gray-100 relative;
+}
+
+.map-container {
+  @apply w-full h-full;
+}
+
+/* Right Panel - Parameters & Scores */
+.dashboard-right {
+  @apply w-80 bg-white border-l border-gray-200 flex flex-col;
+  min-width: 320px;
+}
+
+.parameter-section {
+  @apply flex-1 border-b border-gray-200;
+}
+
+.score-section {
+  @apply h-96;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-sidebar,
+  .dashboard-right {
+    @apply w-72;
+    min-width: 288px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    @apply flex-col;
+  }
+  
+  .dashboard-sidebar,
+  .dashboard-right {
+    @apply w-full h-auto;
+    min-width: auto;
+  }
+  
+  .parameter-section {
+    @apply h-64;
+  }
+  
+  .score-section {
+    @apply h-48;
+  }
+}

@@ -1,0 +1,31 @@
+.parameter-panel {
+  @apply h-full flex flex-col bg-white p-4;
+}
+
+.parameter-header {
+  @apply mb-4;
+}
+
+.parameter-title {
+  @apply text-lg font-semibold text-gray-900 mb-1;
+}
+
+.parameter-subtitle {
+  @apply text-sm text-gray-600;
+}
+
+.parameter-list {
+  @apply space-y-3;
+}
+
+.parameter-item {
+  @apply flex items-center space-x-3 p-3 bg-gray-50 rounded-lg;
+}
+
+.parameter-indicator {
+  @apply w-4 h-4 rounded-full;
+}
+
+.parameter-label {
+  @apply text-sm font-medium text-gray-700;
+}

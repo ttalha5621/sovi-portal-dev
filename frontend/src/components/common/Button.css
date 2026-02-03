@@ -1,0 +1,106 @@
+.button {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Variants */
+.button-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+}
+
+.button-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-500;
+}
+
+.button-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+}
+
+.button-success {
+    @apply bg-green-600 text-white hover:bg-green-700 focus:ring-green-500;
+}
+
+.button-outline {
+    @apply border border-primary-600 text-primary-600 hover:bg-primary-50 focus:ring-primary-500;
+}
+
+.button-ghost {
+    @apply text-gray-700 hover:bg-gray-100 focus:ring-gray-500;
+}
+
+/* Sizes */
+.button-small {
+    @apply px-3 py-1.5 text-sm;
+}
+
+.button-medium {
+    @apply px-4 py-2 text-base;
+}
+
+.button-large {
+    @apply px-6 py-3 text-lg;
+}
+
+/* States */
+.button-loading {
+    @apply cursor-wait;
+}
+
+.button-full-width {
+    @apply w-full;
+}
+
+.button-disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+/* Icon positioning */
+.button-icon-left,
+.button-icon-right {
+    @apply flex items-center;
+}
+
+.button-icon-left {
+    @apply mr-2;
+}
+
+.button-icon-right {
+    @apply ml-2;
+}
+
+/* Spinner */
+.button-spinner {
+    @apply mr-2;
+}
+
+.spinner-small {
+    @apply w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* Specific styles for outline variant */
+.button-outline .button-spinner .spinner-small {
+    @apply border-primary-600 border-t-transparent;
+}
+
+/* Hover effects */
+.button:hover:not(:disabled) {
+    @apply transform -translate-y-0.5 shadow-md;
+}
+
+/* Active state */
+.button:active:not(:disabled) {
+    @apply transform translate-y-0;
+}
+
+/* Focus styles */
+.button:focus {
+    @apply ring-2 ring-offset-2;
+}
+
+/* Group buttons */
+.button-group {
+    @apply inline-flex -space-x-px;
+}
+
+.button-group .button {
+    @apply rounded-none first:rounded-l-lg last:rounded-r-lg;
+}

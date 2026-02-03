@@ -1,0 +1,125 @@
+.register-container {
+    @apply min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 py-12 bg-gradient-to-br from-primary-50 to-primary-100;
+}
+
+.register-card {
+    @apply w-full max-w-md bg-white rounded-2xl shadow-xl p-8 z-10 lg:mr-12;
+}
+
+.register-header {
+    @apply text-center mb-8;
+}
+
+.register-logo {
+    @apply w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4;
+}
+
+.register-logo-icon {
+    @apply w-8 h-8 text-primary-600;
+}
+
+.register-title {
+    @apply text-3xl font-bold text-gray-900 mb-2;
+}
+
+.register-subtitle {
+    @apply text-gray-600;
+}
+
+.register-form {
+    @apply space-y-6;
+}
+
+.register-terms {
+    @apply flex items-start space-x-2;
+}
+
+.terms-checkbox {
+    @apply mt-1 h-4 w-4 text-primary-600 rounded;
+}
+
+.terms-label {
+    @apply text-sm text-gray-700;
+}
+
+.terms-link {
+    @apply text-primary-600 hover:text-primary-700;
+}
+
+.register-button {
+    @apply mt-6;
+}
+
+.register-divider {
+    @apply relative my-8;
+}
+
+.register-divider::before {
+    content: '';
+    @apply absolute top-1/2 left-0 right-0 border-t border-gray-300;
+}
+
+.divider-text {
+    @apply relative px-4 bg-white text-gray-500 text-sm;
+}
+
+.register-login-link {
+    @apply text-center;
+}
+
+.login-link-text {
+    @apply text-gray-600;
+}
+
+.login-link {
+    @apply text-primary-600 hover:text-primary-700 font-medium;
+}
+
+.register-features {
+    @apply w-full max-w-3xl mt-8 lg:mt-0;
+}
+
+.features-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.feature {
+    @apply text-center p-6 bg-white/50 backdrop-blur-sm rounded-xl;
+}
+
+.feature-icon {
+    @apply w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4;
+}
+
+.feature-title {
+    @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.feature-description {
+    @apply text-gray-600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .register-container {
+        @apply flex-col;
+    }
+
+    .register-card {
+        @apply mb-8;
+    }
+}
+
+@media (max-width: 640px) {
+    .register-card {
+        @apply p-6;
+    }
+
+    .register-title {
+        @apply text-2xl;
+    }
+
+    .features-grid {
+        @apply grid-cols-1;
+    }
+}

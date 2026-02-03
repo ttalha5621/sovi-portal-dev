@@ -1,0 +1,150 @@
+.data-entry-form {
+    @apply space-y-6;
+}
+
+.form-loading {
+    @apply py-12 flex items-center justify-center;
+}
+
+/* Basic Information */
+.basic-info-section {
+    @apply space-y-4;
+}
+
+.section-title {
+    @apply text-lg font-semibold text-gray-800;
+}
+
+.basic-info-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.district-select {
+    @apply space-y-2;
+}
+
+.select-label {
+    @apply flex items-center space-x-2 text-sm font-medium text-gray-700;
+}
+
+.select-icon {
+    @apply w-4 h-4;
+}
+
+.select-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+}
+
+.error-message {
+    @apply text-sm text-red-600;
+}
+
+/* Parameter Tabs */
+.parameter-tabs-section {
+    @apply space-y-4;
+}
+
+.parameter-tabs {
+    @apply flex border-b border-gray-200 overflow-x-auto;
+}
+
+.parameter-tab {
+    @apply px-4 py-2 font-medium border-b-2 transition-colors whitespace-nowrap;
+}
+
+.parameter-tab:hover {
+    @apply opacity-90;
+}
+
+.parameter-inputs {
+    @apply mt-4;
+}
+
+.inputs-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+/* Calculated Scores */
+.calculated-scores {
+    @apply bg-gray-50 rounded-lg p-4 space-y-4;
+}
+
+.scores-header {
+    @apply flex items-center justify-between;
+}
+
+.toggle-calculations {
+    @apply text-sm text-primary-600 hover:text-primary-700;
+}
+
+.scores-summary {
+    @apply grid grid-cols-2 md:grid-cols-5 gap-2;
+}
+
+.score-item {
+    @apply bg-white rounded p-3;
+}
+
+.score-label {
+    @apply text-sm text-gray-600 block;
+}
+
+.score-value {
+    @apply text-lg font-semibold text-gray-900;
+}
+
+.scores-details {
+    @apply border-t border-gray-200 pt-4;
+}
+
+.total-sovi {
+    @apply bg-white rounded p-4;
+}
+
+.total-score {
+    @apply flex justify-between items-center mb-2;
+}
+
+.total-label {
+    @apply text-gray-700;
+}
+
+.total-value {
+    @apply text-2xl font-bold text-primary-600;
+}
+
+.total-rating {
+    @apply flex justify-between items-center;
+}
+
+.rating-label {
+    @apply text-gray-700;
+}
+
+.rating-value {
+    @apply text-xl font-semibold text-gray-900;
+}
+
+/* Form Actions */
+.form-actions {
+    @apply flex justify-end space-x-3 pt-6 border-t border-gray-200;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .inputs-grid {
+        @apply grid-cols-1;
+    }
+
+    .scores-summary {
+        @apply grid-cols-2;
+    }
+
+    .form-actions {
+        @apply flex-col space-x-0 space-y-3;
+    }
+
+    .form-actions button {
+        @apply w-full;
+    }
+}
