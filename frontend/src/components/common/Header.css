@@ -1,33 +1,41 @@
 .header {
-  @apply bg-white border-b border-gray-200 shadow-sm;
+  @apply bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50;
 }
 
 .header-content {
-  @apply flex items-center justify-between px-6 py-4;
+  @apply max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4;
 }
 
 .header-left {
-  @apply flex-1;
+  @apply flex-shrink-0;
 }
 
 .header-title {
   @apply text-xl font-bold text-gray-900;
 }
 
+.header-title-link {
+  @apply no-underline hover:text-primary-600 transition-colors;
+}
+
 .header-center {
-  @apply flex-1 flex justify-center;
+  @apply hidden md:flex flex-1 justify-center;
 }
 
 .navbar {
-  @apply px-4 py-2 bg-gray-100 rounded-lg;
+  @apply flex items-center space-x-8;
 }
 
-.nav-title {
-  @apply text-sm font-medium text-gray-700;
+.nav-link {
+  @apply text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors;
+}
+
+.nav-link.active {
+  @apply text-primary-600;
 }
 
 .header-right {
-  @apply flex-1 flex justify-end;
+  @apply flex items-center justify-end flex-shrink-0;
 }
 
 .user-menu {
@@ -39,5 +47,17 @@
 }
 
 .logout-btn {
-  @apply px-3 py-1 text-sm text-red-600 hover:bg-red-50 rounded transition-colors;
+  @apply px-3 py-1 text-sm font-medium text-red-600 hover:bg-red-50 rounded-md transition-colors;
+}
+
+.auth-links {
+  @apply flex items-center space-x-4;
+}
+
+.login-link {
+  @apply text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors;
+}
+
+.register-link {
+  @apply px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-md hover:bg-primary-700 shadow-sm transition-colors;
 }

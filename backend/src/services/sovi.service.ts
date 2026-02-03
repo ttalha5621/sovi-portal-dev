@@ -198,6 +198,31 @@ export class SoviService {
         }
     }
 
+    async bulkUpdateDistrictData(dataArray: CreateDistrictDataInput[]): Promise<{
+        success: number;
+        failed: number;
+        errors: string[];
+    }> {
+        const result = {
+            success: 0,
+            failed: 0,
+            errors: [] as string[]
+        };
+
+        for (const data of dataArray) {
+            try {
+                await this.createOrUpdateDistrictData(data);
+                result.success++;
+            } catch (error: any) {
+                result.failed++;
+                result.errors.push(`District ID ${data.districtId}: ${error.message}`);
+                logger.error(`Bulk update error for district ${data.districtId}:`, error);
+            }
+        }
+
+        return result;
+    }
+
     async updateDistrictOverallScore(districtId: number): Promise<void> {
         try {
             const latestData = await this.getLatestDistrictData(districtId);

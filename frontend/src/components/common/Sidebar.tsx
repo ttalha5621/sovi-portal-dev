@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDistricts } from '../../context/DistrictContext'
+import DistrictList from '../dashboard/DistrictList'
 import './Sidebar.css'
 
 const Sidebar: React.FC = () => {
@@ -15,23 +16,11 @@ const Sidebar: React.FC = () => {
         {loading ? (
           <div className="sidebar-loading">Loading districts...</div>
         ) : (
-          <div className="districts-list">
-            {districts.map((district) => (
-              <div
-                key={district.id}
-                className={`district-item ${selectedDistrict?.id === district.id ? 'selected' : ''}`}
-                onClick={() => selectDistrict(district.id)}
-              >
-                <div className="district-name">{district.name}</div>
-                <div className="district-info">
-                  <span className="district-province">{district.province}</span>
-                  {district.soviScore && (
-                    <span className="district-score">{district.soviScore.toFixed(1)}</span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+          <DistrictList
+            districts={districts}
+            selectedDistrict={selectedDistrict}
+            onSelectDistrict={selectDistrict}
+          />
         )}
       </div>
     </div>
